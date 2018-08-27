@@ -1,24 +1,32 @@
 class UserMailer < ApplicationMailer
 
-  # Subject can be set in your I18n file at config/locales/en.yml
-  # with the following lookup:
-  #
-  #   en.user_mailer.account_activation.subject
-  #
-  def account_activation
+require 'dotenv'
+Dotenv.load
+
+  def account_activation(user)
+    @greeting = "Salut"
+    @user = user
+    mail to: user.email, subject: "Activation de votre compte"
+  end
+
+
+  def password_reset
     @greeting = "Salut"
 
     mail to: "to@example.org"
   end
 
-  # Subject can be set in your I18n file at config/locales/en.yml
-  # with the following lookup:
-  #
-  #   en.user_mailer.password_reset.subject
-  #
-  def password_reset
-    @greeting = "Salut"
+   def welcome_email
+    @user = params[:user]
+    mail(to: @user.email, subject: "Bienvenue à toi moussaillon")
+  end
 
-    mail to: "to@example.org"
+  def new_order
+    @user = user 
+    mail(to: @user.email, subject: "Détail de votre commande")
+  end
+
+  def new_order_admin
+
   end
 end
