@@ -1,0 +1,6 @@
+<h1>Votre commande</h1>
+<ul>
+<li>Status: <%= @order.state %></li>
+<li>Article: <%= @order.item_sku %></li>
+<li>Tarif: <%= humanized_money_with_symbol(@order.amount_cents) %></li>
+<ul>
