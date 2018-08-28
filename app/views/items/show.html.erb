@@ -1,2 +1,204 @@
-<h1>Items#show</h1>
-<p>Find me in app/views/items/show.html.erb</p>
+<!-- SHOP GRID WRAPPER -->
+                    <section class="slice sct-color-2">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-lg-5">
+                                    <!-- Product gallery -->
+                                    <div class="gallery-container">
+                                        <div id="slideshow" class="gallery-top no-padding bg-transparent"></div>
+                                        <div id="slideshow_thumbs" class="swiper-js-container gallery-thumbs gallery-thumbs--style-1 mt-4">
+                                            <div class="swiper-container" data-swiper-items="5" data-swiper-space-between="10" data-swiper-xs-items="3" data-swiper-xs-space-between="10" data-swiper-sm-items="4" data-swiper-sm-space-between="10">
+                                                <div class="swiper-wrapper">
+                                                    <div class="block-image" width= "40">
+                                                        <<%= link_to image_tag @item.image_url %> class="img-responsive">
+                                                    </div>
+                                                    
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-7">
+                                    <div class="px-4">
+                                        <!-- Product description -->
+                                        <div class="product-description-wrapper">
+                                            <!-- Product title -->
+                                            <h2 class="product-title heading heading-3 strong-400 text-capitalize">
+                                                <%= @item.title %>
+                                            </h2>
+
+                                            <hr>
+
+                                            <!-- Product description -->
+                                            <div class="product-short-text mt-4">
+                                                <h3 class="heading heading-xs strong-500 text-uppercase">
+                                                    Description:
+                                                </h3>
+                                                <p>
+                                                    Pellentesque habitant morbi tristique senectus et netus malesuada fames turpis egestas. Vestibulum tortor quam feugiat vitae ultricies eget tempor.
+                                                </p>
+                                            </div>
+
+                                            <!-- Price tag -->
+                                            <div class="product-price py-3">$<strong><%= @item.price_cents%></strong></div>
+
+                                            <form class="form-horizontal">
+
+                                                <!-- Quantity + Add to cart -->
+                                                <label class="text-uppercase strong-600">Quantity</label>
+                                                <div class="row">
+                                                    <div class="col-4">
+                                                        <!-- Plus-Minus control -->
+                                                        <div class="form-group">
+                                                            <input type="number" class="form-control form-control-lg" value="1">
+                                                        </div>
+
+                                                        <!-- Add to cart button -->
+                                                        <button type="button" class="btn btn-styled btn-lg btn-block btn-base-1 btn-cart mt-2">
+                                                            Add to cart
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <span class="space-xs-lg"></span>
+
+                    <!-- Featured products -->
+                    <section class="slice sct-color-1 border-top">
+                        <div class="container">
+                            <div class="section-title section-title--style-1 text-center">
+                                <h3 class="section-title-inner heading-3 strong-400">
+                                    <span>Other suggestions</span>
+                                </h3>
+                                <span class="section-title-delimiter clearfix d-none"></span>
+                            </div>
+
+                            <span class="clearfix"></span>
+
+                            <div class="row cols-xs-space cols-md-space cols-md-space">
+                                <div class="col-lg-4">
+                                    <div class="block product no-border z-depth-2--hover">
+                                        <div class="block-image">
+                                            <a href="#">
+                                                <img src="../../assets/images/prv/shop/sportswear/img-1a.png" class="img-center">
+                                            </a>
+                                            <span class="product-ribbon product-ribbon-right product-ribbon--style-1 bg-blue text-uppercase">New</span>
+                                        </div>
+
+                                        <div class="block-body pt-0 text-center">
+                                            <h3 class="heading heading-6 strong-500 text-capitalize">
+                                                <a href="#">
+                                                    Women's running shoes
+                                                </a>
+                                            </h3>
+                                            <div class="product-colors text-center mt-2">
+                                                <div class="color-switch float-wrapper">
+                                                    <a href="#" class="bg-purple"></a>
+                                                    <a href="#" class="bg-pink"></a>
+                                                    <a href="#" class="bg-blue"></a>
+                                                </div>
+                                            </div>
+                                            <div class="price-wrapper mt-2">
+                                                <span class="price heading-6 c-gray-dark strong-500">$<span class="price-value">120.00</span></span>
+                                            </div>
+                                        </div>
+
+                                        <div class="product-actions--a product-actions--3" data-animation-in="slideInLeft"  data-animation-out="slideOutLeft">
+                                            <button type="button" class="btn-product-action">
+                                                <i class="ion-bag"></i>
+                                            </button>
+
+                                            <button type="button" class="btn-product-action">
+                                                <i class="ion-ios-heart-outline"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-4">
+                                    <div class="block product no-border z-depth-2--hover">
+                                        <div class="block-image">
+                                            <a href="#">
+                                                <img src="../../assets/images/prv/shop/sportswear/img-2a.png" class="img-center">
+                                            </a>
+                                            <span class="product-ribbon product-ribbon-right product-ribbon--style-1 bg-red text-uppercase">Sale</span>
+                                        </div>
+
+                                        <div class="block-body pt-0 text-center">
+                                            <h3 class="heading heading-6 strong-500 text-capitalize">
+                                                <a href="#">
+                                                    Women's short top
+                                                </a>
+                                            </h3>
+                                            <div class="product-colors text-center mt-2">
+                                                <div class="color-switch float-wrapper">
+                                                    <a href="#" class="bg-black"></a>
+                                                    <a href="#" class="bg-pink"></a>
+                                                    <a href="#" class="bg-orange"></a>
+                                                </div>
+                                            </div>
+                                            <div class="price-wrapper mt-2">
+                                                <span class="price heading-6 c-gray-dark strong-500">
+                                                    $<span class="price-value">45.00</span>
+                                                    <small class="c-red">(20% off)</small>
+                                                </span>
+                                            </div>
+                                        </div>
+
+                                        <div class="product-actions--a product-actions--3" data-animation-in="slideInLeft"  data-animation-out="slideOutLeft">
+                                            <button type="button" class="btn-product-action">
+                                                <i class="ion-bag"></i>
+                                            </button>
+
+                                            <button type="button" class="btn-product-action">
+                                                <i class="ion-ios-heart-outline"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-4">
+                                    <div class="block product no-border z-depth-2--hover">
+                                        <div class="block-image">
+                                            <a href="#">
+                                                <img src="../../assets/images/prv/shop/sportswear/img-3a.png" class="img-center">
+                                            </a>
+                                        </div>
+
+                                        <div class="block-body pt-0 text-center">
+                                            <h3 class="heading heading-6 strong-500 text-capitalize">
+                                                <a href="#">
+                                                    Men's fitness shoes
+                                                </a>
+                                            </h3>
+                                            <div class="product-colors text-center mt-2">
+                                                <div class="color-switch float-wrapper">
+                                                    <a href="#" class="bg-black"></a>
+                                                    <a href="#" class="bg-red"></a>
+                                                </div>
+                                            </div>
+                                            <div class="price-wrapper mt-2">
+                                                <span class="price heading-6 c-gray-dark strong-500">$<span class="price-value">180.00</span></span>
+                                            </div>
+                                        </div>
+
+                                        <div class="product-actions--a product-actions--3" data-animation-in="slideInLeft"  data-animation-out="slideOutLeft">
+                                            <button type="button" class="btn-product-action">
+                                                <i class="ion-bag"></i>
+                                            </button>
+
+                                            <button type="button" class="btn-product-action">
+                                                <i class="ion-ios-heart-outline"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                        </div>
+                    </section>
