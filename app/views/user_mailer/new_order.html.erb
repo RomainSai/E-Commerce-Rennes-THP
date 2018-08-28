@@ -1,0 +1,10 @@
+<meta charset="UTF-8">
+<p>Bonjour, <%= @user.name %></p>
+<p>Nous avons bien recu votre commande <%= @order.id %>, merci.</p>
+<p>Voici le détail: </p>
+<ul>
+<li>Status: <%= @order.state %></li>
+<li>Article: <%= @order.item_sku %></li>
+<li>Tarif: <%= humanized_money_with_symbol(@order.amount_cents) %></li>
+<ul>
+<p>A bientôt,</p>
