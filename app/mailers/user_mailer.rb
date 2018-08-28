@@ -30,5 +30,8 @@ Dotenv.load
 
   end
 
+  def test_email
+    mail(to:@user, subject: "test")
+  end
 
 end
