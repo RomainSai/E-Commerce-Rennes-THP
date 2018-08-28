@@ -1,4 +1,7 @@
+
 <a href="#">
                                                     <img src="<%= link_to image_tag (item.image_url) %>
 
                                                 </a>
+
+<%= @items.each do |item| %>
