@@ -1,11 +1,10 @@
     <!-- Navbar -->
-    
+
     <nav class="navbar navbar-expand-lg navbar-inverse bg-gradient-1 navbar--link-arrow">
         <div class="container navbar-container">
             <!-- Brand/Logo -->
-                        <a class="navbar-brand" href="../../index.html">
-                <img src="../../assets/images/logo/logo-1-a.png" class="" alt="Boomerang">
-                            </a>
+                <%= link_to 'E Commerce Rennes' , items_path, :class => 'navbar-brand', :id => 'titre' %>
+
 
             <div class="d-inline-block">
                 <!-- Navbar toggler  -->
@@ -17,162 +16,46 @@
             </div>
 
             <div class="collapse navbar-collapse align-items-center justify-content-end" id="navbar_main">
-    <!-- Navbar search - For small resolutions -->
-    <div class="navbar-search-widget b-xs-bottom py-3 d-lg-none d-none">
-        <form class="" role="form">
-            <div class="input-group input-group-lg">
-                <input type="text" class="form-control" placeholder="Search for...">
-                <span class="input-group-btn">
-                <button class="btn btn-base-3" type="button">Go!</button>
-                </span>
-            </div>
-        </form>
-    </div>
+              <!-- Navbar search - For small resolutions -->
+              <div class="navbar-search-widget b-xs-bottom py-3 d-lg-none d-none">
+                  <form class="" role="form">
+                      <div class="input-group input-group-lg">
+                          <input type="text" class="form-control" placeholder="Search for...">
+                          <span class="input-group-btn">
+                          <button class="btn btn-base-3" type="button">Go!</button>
+                          </span>
+                      </div>
+                  </form>
+              </div>
 
-    <!-- Navbar links -->
-    <ul class="navbar-nav">
-        <li class="nav-item dropdown megamenu">
-            <a class="nav-link" href="../../index.html">
-                Home
-            </a>
-        </li>
-        <li class="nav-item dropdown megamenu">
-            <a class="nav-link" href="../../demos.html">
-                Profile
-            </a>
-        </li>
-        <li class="nav-item dropdown megamenu">
-            <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Shop
-            </a>
+              <!-- Navbar links -->
+              <ul class="navbar-nav">
+                  <li class="nav-item dropdown megamenu">
+                      <%= link_to "Home", items_path, :class => 'nav-link' %>
+                  </li>
+                  <li class="nav-item dropdown megamenu">
+                          <%= link_to "Profile", user_session_path(current_user), :class => 'nav-link' %>
+                  </li>
+                  <li class="nav-item dropdown megamenu">
+                        <% if user_signed_in? %>
+                          <%= link_to "Sign out", destroy_user_session_path, method: :delete, :class => 'nav-link' %>
+                        <% else %>
+                        <li class="nav-item dropdown megamenu">
+                          <%= link_to "Sign in", new_user_session_path, :class => 'nav-link'  %>
+                        </li>
+                        <li class="nav-item dropdown megamenu">
+                          <%= link_to "Sign up", new_user_registration_path, :class => 'nav-link' %>
+                          </li>
+                        <% end %>
+                    </li>
 
-            <div class="dropdown-menu">
-                <div class="mega-dropdown-menu row row-no-padding">
-                    <div class="mega-dropdown-col mega-dropdown-col-cover mega-dropdown-col-cover--left col-lg-5 d-none d-lg-block d-xl-block" style="background-image: url(../../assets/images/prv/other/img-14-1000x900.jpg); background-position: center center;">
-                        <span class="mask mask-base-1--style-1 alpha-8"></span>
-                        <div class="mega-dropdown-col-inner d-flex align-items-center no-padding">
-                            <div class="col">
-                                <div class="row align-items-center">
-                                    <div class="col-12">
-                                        <div class="px-4">
-                                            <h2 class="heading heading-2 strong-600 c-white">
-                                                Bibliothèque
-                                            </h2>
-                                            <p class="strong-300 c-white mt-4">
-                                                Trouve des oeuvres par thèmes
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    <li class="nav-item dropdown megamenu">
+                        <% if user_signed_in? %>
+                          <%= link_to "Panier", new_user_registration_path, :class => 'nav-link' %>
+                        <% end %>
+                    </li>
 
-                    <div class="col-md-4 col-lg-2 ml-lg-auto">
-                        <ul class="megadropdown-links">
-                            <li>
-                                <a class="dropdown-item" href="../../documentation/components/alerts.html">
-                                    Peintures
-                                </a>
-                            </li>
-                            <li>
-                                <a class="dropdown-item" href="../../documentation/components/badges.html">
-                                    Encres
-                                </a>
-                            </li>
-                            <li>
-                                <a class="dropdown-item" href="../../documentation/components/buttons.html">
-                                    Estampes
-                                </a>
-                            </li>
-
-                            <li>
-                                <a class="dropdown-item" href="../../documentation/components/countdown.html">
-                                    Aquarelles
-                                </a>
-                            </li>
-
-                            <li>
-                                <a class="dropdown-item" href="../../documentation/components/forms.html">
-                                    Digital art
-                                </a>
-                            </li>
-
-                        </ul>
-                    </div>
-
-                    <div class="col-md-4 col-lg-2">
-                        <ul class="megadropdown-links">
-                            <li>
-                                <a class="dropdown-item" href="../../documentation/components/pagination.html">
-                                    Lynogravures
-                                </a>
-                            </li>
-                            <li>
-                                <a class="dropdown-item" href="../../documentation/components/progress.html">
-                                    Serigraphies
-                                </a>
-                            </li>
-                            <li>
-                                <a class="dropdown-item" href="../../documentation/components/recaptcha.html">
-                                    Pyrogravures
-                                </a>
-                            </li>
-                            <li>
-                                <a class="dropdown-item" href="../../documentation/content/titles.html">
-                                    Lynotype
-                                </a>
-                            </li>
-
-                        </ul>
-                    </div>
-
-                    <div class="col-md-4 col-lg-2">
-                        <ul class="megadropdown-links">
-
-                            <li>
-                                <a class="dropdown-item" href="../../documentation/blocks/icon.html">
-                                    Photographies
-                                </a>
-                            </li>
-                            <li>
-                                <a class="dropdown-item" href="../../documentation/blocks/jobs.html">
-                                    Impressions numériques
-                                </a>
-                            </li>
-
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </li>
-        <li class="nav-item dropdown megamenu">
-            <a class="nav-link" href="../../demos.html">
-              <% if user_signed_in? %>
-                <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
-              <% else %>
-                <%= link_to "Sign in", new_user_session_path %>
-                <%= link_to "Sign up", new_user_registration_path %>
-              <% end %>
-            </a>
-        </li>
-    </ul>
-
-    <ul class="navbar-nav ml-lg-auto">
-        <li class="nav-item">
-            <a href="../../documentation/getting-started/introduction.html" class="nav-link">
-               Docs
-            </a>
-        </li>
-    </ul>
-</div>
-
-
-<div class="pl-4 d-none d-lg-inline-block">
-    <a href="https://goo.gl/9BbH7R" class="btn btn-styled btn-base-2 btn-circle" target="_blank">
-        Purchase now
-            </a>
-</div>
+              </ul>
         </div>
+      </div>
     </nav>
-</div>
