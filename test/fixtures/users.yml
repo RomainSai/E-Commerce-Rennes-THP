@@ -1,9 +1,10 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
+<<<<<<< HEAD
 chris:
   first_name: chris
   last_name: test
-  email: christophe.leray1@gmail.com 
+  email: christophe.leray1@gmail.com
   admin: false
 
 toto:
@@ -12,3 +13,5 @@ toto:
   email: breizhmtb@hotmail.com
   admin: false
 
+=======
+>>>>>>> 984c7f6f53010f1f938471d0d40d091216005a17
