@@ -29,4 +29,9 @@ Dotenv.load
   def new_order_admin
 
   end
+
+  def test_email
+    mail(to:@user, subject: "test")
+  end
+
 end
