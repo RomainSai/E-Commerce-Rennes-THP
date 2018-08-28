@@ -5,6 +5,9 @@ Rails.application.routes.draw do
   resources :charges
 
   root to: 'items#index'
+  get "/about", to: 'static_pages#about'
+  get "/contact", to:'static_pages#contact'
+  
   resources :items
   devise_for :users
 
