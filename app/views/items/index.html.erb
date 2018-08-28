@@ -2,7 +2,7 @@
     <!-- Header -->
     <div class="header">
     <!-- Top Bar -->
-    
+
     <!-- Global Search -->
     <section id="sctGlobalSearch" class="global-search global-search-overlay">
     <div class="container">
@@ -80,7 +80,7 @@
                                     </div>
                                 </div>
                             </div>
-                        
+
                             <div class="row-wrapper">
                                 <div class="row cols-xs-space cols-md-space cols-md-space">
                                     <%= @items.each do |item| %>
@@ -92,7 +92,7 @@
 
                                             <div class="block-body pt-0 text-center">
                                                 <h3 class="heading heading-6 strong-500 text-capitalize">
-                                                    <%= link_to item.title, item %>   
+                                                    <%= link_to item.title, item %>
                                                 </h3>
                                                 <div class="product-colors text-center mt-2">
                                                     <div class="color-switch float-wrapper">
@@ -102,7 +102,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="price-wrapper mt-2">
-                                                    <span class="price heading-6 c-gray-dark strong-500">$<span class="price-value"><%= item.price%></span></span>
+                                                    <span class="price heading-6 c-gray-dark strong-500">$<span class="price-value"><%= item.price_cents%></span></span>
                                                 </div>
                                             </div>
 
@@ -117,11 +117,11 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <% end -%> 
+                                    <% end -%>
 
                                 </div>
                             </div>
-                         
+
 
                             <!-- Pagination -->
                             <div class="pagination-wrapper d-flex justify-content-center pt-4">
@@ -154,6 +154,6 @@
 
 
 
-  
-   
+
+
 </main>
