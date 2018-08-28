@@ -1,0 +1,7 @@
+<p>
+  <%= @greeting %>, 
+</p>
+  <p>Merci de votre inscription. Merci de valdier votre email en suivant le lien ci-dessous: </p>
+  <p><%= link_to "Activate", edit_account_activation_url(@user.activation_token,
+                                                    email: @user.email) %>
+  <p>Merci, </p>
