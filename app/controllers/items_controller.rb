@@ -1,6 +1,7 @@
 class ItemsController < ApplicationController
   def index
     @items = Item.all
+    puts params.inspect
   end
 
   def create
@@ -8,6 +9,7 @@ class ItemsController < ApplicationController
 
   def show
     @item = Item.find(params[:id])
+    puts params.inspect
   end
 
   def update

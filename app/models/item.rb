@@ -6,4 +6,5 @@ class Item < ApplicationRecord
 	validates :image_url, presence: true
 	validates :price, presence: true
 
+	monetize :price_cents
 end

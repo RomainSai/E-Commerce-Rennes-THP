@@ -8,4 +8,8 @@ Rails.application.routes.draw do
   resources :items
   devise_for :users
 
+  resources :orders, only: [:show, :create] do
+    resources :charges, only: [:new, :create]
+  end
+
 end
