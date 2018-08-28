@@ -1,16 +1,24 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Discover the best StartupFoodtech based in Rennes, Brittany France">
+    <meta name="author" content="THP Rennes">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="title" content="the StartupFoodtech Rennes">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>ECommerceRennes</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    Accept: application/vnd.heroku+json; version=3
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700,800|Roboto:400,500,700" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700,800|Roboto:400,500,700" rel="stylesheet">
   </head>
 
   <body>
+    <%= render 'layouts/header'%>
     <%= yield %>
+    <%= render 'layouts/footer'%>
   </body>
 </html>
