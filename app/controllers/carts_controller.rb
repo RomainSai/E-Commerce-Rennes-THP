@@ -35,9 +35,14 @@ class CartsController < ApplicationController
      p '-' * 20 + 'inserting items' + '-' * 20
      insert_items
      p '-' * 20 + @cart.items.last.to_s + '-' * 20
-     #p '-' * 20 + @cart.items.last.title.to_s + '-' * 20
-
-     # @cart_total = @cart.all
+     p '-' * 20 + @cart.items.last.price.to_s + '-' * 20
+     p '-' * 20 + 'items inserted' + '-' * 20
+     @cart_total = 0
+     @cart.items.each do |item|
+       p '-' * 20 + item.price.to_s + '-' * 20
+       @cart_total += item.price.to_f
+       p '-' * 20 + '€' + @cart_total.to_s + '-' * 20
+     end
     end
 
     def insert_items
