@@ -32,7 +32,19 @@ class CartsController < ApplicationController
      cart_exists?
      p '-' * 20 + @cart.id.to_s + '-' * 20
      p '-' * 20 + @cart.user_id.to_s + '-' * 20
+     p '-' * 20 + 'inserting items' + '-' * 20
+     insert_items
+     p '-' * 20 + @cart.items.last.to_s + '-' * 20
+     #p '-' * 20 + @cart.items.last.title.to_s + '-' * 20
+
      # @cart_total = @cart.all
+    end
+
+    def insert_items
+      item = Item.find(params[:id])
+      @cart.items << item
+
+      #  p '-' * 20 + @new_item.id.to_s + '-' * 20
     end
 
     private
