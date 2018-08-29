@@ -22,8 +22,14 @@ Dotenv.load
   end
 
   def new_order
-    @user = user 
-    mail(to: @user.email, subject: "Détail de votre commande")
+    puts params.inspect
+    #user = User.find(params[:id])
+    #order = Order.find(params[:id])
+    @user = User.find(3)
+    @order = Order.find(1)
+    puts @user
+    puts @order
+    mail(to: @user.email, subject: "Détail de votre commande #{@order.id}")
   end
 
   def new_order_admin
