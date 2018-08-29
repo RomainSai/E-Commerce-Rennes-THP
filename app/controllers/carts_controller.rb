@@ -23,14 +23,16 @@ class CartsController < ApplicationController
       if Cart.find_by(user_id: current_user.id).user_id == current_user.id
         @cart = Cart.find_by(user_id: current_user.id)
       else
-        @cart = Cart.create(user_id: current_user.id)
+        create
       end
     end
 
     def show
      puts "------dans show de Carts----"
      cart_exists?
-     @cart_total = 
+     p '-' * 20 + @cart.id.to_s + '-' * 20
+     p '-' * 20 + @cart.user_id.to_s + '-' * 20
+     # @cart_total = @cart.all
     end
 
     private
