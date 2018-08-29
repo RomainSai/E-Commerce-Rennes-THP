@@ -6,6 +6,9 @@ Rails.application.routes.draw do
   resources :charges
 
 
+  resources :devise
+
+
   resources :users
   root to: 'items#index'
   get "/about", to: 'static_pages#about'
