@@ -44,8 +44,9 @@
                                             </div>
 
                                             <div class="link-menu link-menu--style-3 py-4 border-bottom">
-                                                <a href="../../pages/profile/account-settings.html" class="active">Settings</a>
-                                                <a href="/users/order">Orders</a>
+
+                                                <%= link_to "Settings", user_path(current_user.id) %>
+                                                <%= link_to "Order", user_path(current_user.id) %>
                                             </div>
 
                                             <!-- Account settings -->
@@ -67,7 +68,7 @@
                                                                     <div class="col-md-6 col-lg-4">
                                                                         <div class="form-group">
                                                                             <label class="control-label">Name</label>
-                                                                            <input type="text" class="form-control form-control-lg">
+                                                                            <input type="text" class="form-control form-control-lg" value= <%= @user.name %>>
                                                                         </div>
                                                                     </div>
                                                                 </div>
