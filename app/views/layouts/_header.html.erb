@@ -34,8 +34,13 @@
                       <%= link_to "Home", items_path, :class => 'nav-link' %>
                   </li>
                   <li class="nav-item dropdown megamenu">
-                          <%= link_to "Profile", user_session_path(current_user), :class => 'nav-link' %>
+                          <%= link_to (image_tag 'icons/profil_blanc.png'), user_session_path(current_user), :class => 'nav-link' %>
                   </li>
+                  
+                  <li class="nav-item dropdown megamenu">
+                        <% if user_signed_in? %>
+                          <%= link_to (image_tag 'icons/panier_blanc.png'), new_user_registration_path, :class => 'nav-link' %>
+                        <% end %>
                   <li class="nav-item dropdown megamenu">
                         <% if user_signed_in? %>
                           <%= link_to "Sign out", destroy_user_session_path, method: :delete, :class => 'nav-link' %>
@@ -49,10 +54,6 @@
                         <% end %>
                     </li>
 
-                    <li class="nav-item dropdown megamenu">
-                        <% if user_signed_in? %>
-                          <%= link_to "Panier", new_user_registration_path, :class => 'nav-link' %>
-                        <% end %>
                     </li>
 
               </ul>
