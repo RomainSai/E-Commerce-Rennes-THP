@@ -4,6 +4,8 @@ class User < ApplicationRecord
   has_many :orders
   has_many :carts
 
+  validates :name, presence: true
+
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 end
