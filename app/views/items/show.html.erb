@@ -55,9 +55,8 @@
                                                         </div>
 
                                                         <!-- Add to cart button -->
-                                                        <button type="button" class="btn btn-styled btn-lg btn-block btn-base-1 btn-cart mt-2">
-                                                            Add to cart
-                                                        </button>
+
+                                                        <%= link_to("Ajouter au panier", { controller: "carts", action: "show" }) %>
                                                     </div>
                                                 </div>
                                             </form>
