@@ -1,5 +1,15 @@
 class ChargesController < ApplicationController
-  before_action :set_order
+  require 'dotenv'
+  Dotenv.load
+
+  require "stripe"
+Stripe.api_key = "sk_test_hbNUl1AqNieYvIz49KzF257h"
+
+Stripe::Customer.create(
+  :description => "Customer for jenny.rosen@example.com",
+  :source => "tok_mastercard" # obtained with Stripe.js
+)
+  @amount = @cart_total.to_i
 
   def new
   end
@@ -9,25 +19,18 @@ class ChargesController < ApplicationController
       :email => params[:stripeEmail],
       :source  => params[:stripeToken]
     )
-
+    puts '------------CREATE STRIPE----------'
     charge = Stripe::Charge.create(
-      :customer    => user.id,
-      :amount      => @order.amount_cents,
-      :description => "Paiement pour l'image #{@order.item_sku}",
-      :currency    => @order.amount_cents
+      :customer    => customer.id,
+      :amount      => @amount,
+      :description => "Paiement pour l'image",
+      :currency    => 'usd'
     )
-
-    @order.update(charge: charge.to_json, state: 'paid')
-    redirect_to order_path(@order)
+    puts '------------CREATE lolololo----------'
 
   rescue Stripe::CardError => e
-    flash[:alert] = e.message
-    redirect_to new_charge_path
-  end
-
-private
-  def set_order
-    @order = current_user.orders.where(state: 'pending').find(params[:id])
+    flash[:error] = 'problème de carte'
+    redirect_to root_path
   end
 
 end
