@@ -10,9 +10,9 @@
                                             <div class="swiper-container" data-swiper-items="5" data-swiper-space-between="10" data-swiper-xs-items="3" data-swiper-xs-space-between="10" data-swiper-sm-items="4" data-swiper-sm-space-between="10">
                                                 <div class="swiper-wrapper">
                                                     <div class="block-image">
-                                                        <%= link_to image_tag @item.image_url, :class =>"img-fluid" %> 
+                                                        <%= link_to image_tag @item.image_url, :class =>"img-fluid" %>
                                                     </div>
-                                                    
+
                                                 </div>
                                             </div>
                                         </div>
@@ -41,7 +41,7 @@
                                             </div>
 
                                             <!-- Price tag -->
-                                            <div class="product-price py-3">$<strong><%= @item.price_cents%></strong></div>
+                                            <div class="product-price py-3">$<strong><%= @item.price %></strong></div>
 
                                             <form class="form-horizontal">
 
@@ -70,6 +70,6 @@
 
                         <span class="space-xs-lg"></span>
 
-                    
+
                         </div>
                     </section>
