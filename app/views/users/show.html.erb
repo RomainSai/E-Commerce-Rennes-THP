@@ -46,7 +46,7 @@
 
                                             <div class="link-menu link-menu--style-3 py-4 border-bottom">
                                                 <%= link_to "Settings", user_path(current_user.id) %>
-                                                <%= link_to "Order", user_path(current_user.id) %>
+                                                <%= link_to "Modifier vos données", edit_user_registration_path(current_user.id) %>
                                             </div>
 
                                             <!-- Account settings -->
@@ -145,6 +145,7 @@
                                                                     <div class="col-md-6 col-lg-4">
                                                                         <div class="form-group">
                                                                             <label class="control-label">Confirmez votre mot de passe</label>
+
                                                                             <input type="text" class="form-control form-control-lg">
                                                                         </div>
                                                                     </div>
