@@ -20,7 +20,7 @@ class CartsController < ApplicationController
 
     def cart_exists?
       puts "------dans cart_exists?----"
-      if Cart.find_by(user_id: current_user.id).user_id == current_user.id
+      if Cart.exists?(user_id: current_user.id)
         @cart = Cart.find_by(user_id: current_user.id)
       else
         create
@@ -50,6 +50,10 @@ class CartsController < ApplicationController
       @cart.items << item
 
       #  p '-' * 20 + @new_item.id.to_s + '-' * 20
+    end
+
+    def delete_item
+      @cart.items.destroy(params[:item_id])
     end
 
     private

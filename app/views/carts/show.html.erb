@@ -1,1 +1,29 @@
-<p>show de carts</p>
+<h3>Votre Panier</h3>
+<% @cart.items.each do |item| %>
+  <div class="col-lg-5">
+      <!-- Product gallery -->
+      <div class="gallery-container">
+          <div id="slideshow" class="gallery-top no-padding bg-transparent"></div>
+          <div id="slideshow_thumbs" class="swiper-js-container gallery-thumbs gallery-thumbs--style-1 mt-4">
+              <div class="swiper-container" data-swiper-items="5" data-swiper-space-between="10" data-swiper-xs-items="3" data-swiper-xs-space-between="10" data-swiper-sm-items="4" data-swiper-sm-space-between="10">
+                  <div class="swiper-wrapper">
+                      <div class="block-image">
+                          <%= link_to image_tag item.image_url, :class =>"img-fluid" %>
+                      </div>
+
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+  <div class="col-lg-7">
+    <div class="px-4">
+      <div class="product-description-wrapper">
+        <h2 class="product-title heading heading-3 strong-400 text-capitalize">
+            <%= item.title %>
+        </h2>
+        <div class="product-price py-3"><strong><%= item.price %></strong> €</div>
+      </div>
+    </div>
+  </div>
+<% end %>
