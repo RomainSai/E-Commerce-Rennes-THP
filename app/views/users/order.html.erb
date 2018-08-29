@@ -1,0 +1,309 @@
+<section class="slice-sm sct-color-1">
+                        <div class="profile">
+                            <div class="container">
+                                <div class="row cols-xs-space cols-sm-space cols-md-space">
+                                    <div class="col-lg-4">
+                                        <div class="sidebar sidebar--style-2 no-border">
+                                                <div class="widget">
+        <!-- Profile picture -->
+        <div class="profile-picture profile-picture--style-2">
+            <%= image_tag 'profile/person-3.jpg', :class=> "img-center"%>
+            <a href="#" class="btn-aux">
+                <i class="ion ion-edit"></i>
+            </a>
+        </div>
+
+        <!-- Profile details -->
+        <div class="profile-details">
+            <h2 class="heading heading-4 strong-500 profile-name"><%= @user.name %></h2>
+
+        </div>
+    </div>
+
+                        <div class="col-lg-8">
+                                        <div class="main-content">
+                                            <!-- Page title -->
+                                            <div class="page-title">
+                                                <div class="row align-items-center">
+                                                    <div class="col-lg-6 col-12">
+                                                        <h2 class="heading heading-5 text-capitalize strong-500 mb-0">
+                                                            <a href="#" class="link text-underline--none">
+                                                                <i class="ion-ios-arrow-back"></i> Orders
+                                                            </a>
+                                                        </h2>
+                                                    </div>
+                                                    <div class="col-lg-6 col-12">
+
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="link-menu link-menu--style-3 py-4 border-bottom">
+                                                <a href="../../pages/profile/account-settings.html">Settings</a>
+                                                <a href="../../pages/profile/account-orders.html" class="active">Orders</a>
+                                            </div>
+
+                                            <!-- Order history table -->
+                                            <div class="card no-border">
+                                                <div>
+                                                    <table class="table table-sm table-hover">
+                                                        <thead>
+                                                            <tr>
+                                                                <th>
+                                                                    <div class="checkbox">
+                                                                        <input type="checkbox" name="checkbox_example_1">
+                                                                        <label></label>
+                                                                    </div>
+                                                                </th>
+                                                                <th>Order</th>
+                                                                <th>Date</th>
+                                                                <th>Amount</th>
+                                                                <th>Tracking</th>
+                                                                <th>Status</th>
+                                                            </tr>
+                                                        </thead>
+
+                                                        <tbody>
+                                                            <tr>
+                                                                <td>
+                                                                    <div class="checkbox">
+                                                                        <input type="checkbox" name="checkbox_example_1">
+                                                                        <label></label>
+                                                                    </div>
+                                                                </td>
+                                                                <td>
+                                                                    <a href="#">WPX-1500</a>
+                                                                </td>
+                                                                <td>06/08/2018</td>
+                                                                <td>
+                                                                    25.00 EUR
+                                                                </td>
+                                                                <td>
+                                                                    <a href="#">10005-x</a>
+                                                                </td>
+                                                                <td>
+                                                                    <span class="badge badge--2 mr-4">
+                                                                        <i class="bg-green"></i> paid
+                                                                    </span>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>
+                                                                    <div class="checkbox">
+                                                                        <input type="checkbox" name="checkbox_example_1">
+                                                                        <label></label>
+                                                                    </div>
+                                                                </td>
+                                                                <td>
+                                                                    <a href="#">WPX-1602</a>
+                                                                </td>
+                                                                <td>10/10/2018</td>
+                                                                <td>
+                                                                    60.20 EUR
+                                                                </td>
+                                                                <td>
+                                                                    <a href="#">10014-x</a>
+                                                                </td>
+                                                                <td>
+                                                                    <span class="badge badge--2 mr-4">
+                                                                        <i class="bg-green"></i> paid
+                                                                    </span>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>
+                                                                    <div class="checkbox">
+                                                                        <input type="checkbox" name="checkbox_example_1">
+                                                                        <label></label>
+                                                                    </div>
+                                                                </td>
+                                                                <td>
+                                                                    <a href="#"><a href="#">WPX-1650</a></a>
+                                                                </td>
+                                                                <td>15/10/2018</td>
+                                                                <td>
+                                                                    99.00 EUR
+                                                                </td>
+                                                                <td>
+                                                                    <a href="#">10525-x</a>
+                                                                </td>
+                                                                <td>
+                                                                    <span class="badge badge--2 mr-4">
+                                                                        <i class="bg-red"></i> canceled
+                                                                    </span>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>
+                                                                    <div class="checkbox">
+                                                                        <input type="checkbox" name="checkbox_example_1">
+                                                                        <label></label>
+                                                                    </div>
+                                                                </td>
+                                                                <td>
+                                                                    <a href="#">WPX-1741</a>
+                                                                </td>
+                                                                <td>23/08/2018</td>
+                                                                <td>
+                                                                    35.00 EUR
+                                                                </td>
+                                                                <td>
+                                                                    <a href="#">10728-x</a>
+                                                                </td>
+                                                                <td>
+                                                                    <span class="badge badge--2 mr-4">
+                                                                        <i class="bg-blue"></i> shipped
+                                                                    </span>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>
+                                                                    <div class="checkbox">
+                                                                        <input type="checkbox" name="checkbox_example_1">
+                                                                        <label></label>
+                                                                    </div>
+                                                                </td>
+                                                                <td>
+                                                                    <a href="#">WPX-2060</a>
+                                                                </td>
+                                                                <td>25/11/2018</td>
+                                                                <td>
+                                                                    17.50 EUR
+                                                                </td>
+                                                                <td>
+                                                                    <a href="#">11500-x</a>
+                                                                </td>
+                                                                <td>
+                                                                    <span class="badge badge--2 mr-4">
+                                                                        <i class="bg-orange"></i> pending
+                                                                    </span>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>
+                                                                    <div class="checkbox">
+                                                                        <input type="checkbox" name="checkbox_example_1">
+                                                                        <label></label>
+                                                                    </div>
+                                                                </td>
+                                                                <td>
+                                                                    <a href="#">WPX-1500</a>
+                                                                </td>
+                                                                <td>06/08/2018</td>
+                                                                <td>
+                                                                    25.00 EUR
+                                                                </td>
+                                                                <td>
+                                                                    <a href="#">10005-x</a>
+                                                                </td>
+                                                                <td>
+                                                                    <span class="badge badge--2 mr-4">
+                                                                        <i class="bg-green"></i> paid
+                                                                    </span>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>
+                                                                    <div class="checkbox">
+                                                                        <input type="checkbox" name="checkbox_example_1">
+                                                                        <label></label>
+                                                                    </div>
+                                                                </td>
+                                                                <td>
+                                                                    <a href="#">WPX-1602</a>
+                                                                </td>
+                                                                <td>10/10/2018</td>
+                                                                <td>
+                                                                    60.20 EUR
+                                                                </td>
+                                                                <td>
+                                                                    <a href="#">10014-x</a>
+                                                                </td>
+                                                                <td>
+                                                                    <span class="badge badge--2 mr-4">
+                                                                        <i class="bg-green"></i> paid
+                                                                    </span>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>
+                                                                    <div class="checkbox">
+                                                                        <input type="checkbox" name="checkbox_example_1">
+                                                                        <label></label>
+                                                                    </div>
+                                                                </td>
+                                                                <td>
+                                                                    <a href="#"><a href="#">WPX-1650</a></a>
+                                                                </td>
+                                                                <td>15/10/2018</td>
+                                                                <td>
+                                                                    99.00 EUR
+                                                                </td>
+                                                                <td>
+                                                                    <a href="#">10525-x</a>
+                                                                </td>
+                                                                <td>
+                                                                    <span class="badge badge--2 mr-4">
+                                                                        <i class="bg-red"></i> canceled
+                                                                    </span>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>
+                                                                    <div class="checkbox">
+                                                                        <input type="checkbox" name="checkbox_example_1">
+                                                                        <label></label>
+                                                                    </div>
+                                                                </td>
+                                                                <td>
+                                                                    <a href="#">WPX-1741</a>
+                                                                </td>
+                                                                <td>23/08/2018</td>
+                                                                <td>
+                                                                    35.00 EUR
+                                                                </td>
+                                                                <td>
+                                                                    <a href="#">10728-x</a>
+                                                                </td>
+                                                                <td>
+                                                                    <span class="badge badge--2 mr-4">
+                                                                        <i class="bg-blue"></i> shipped
+                                                                    </span>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>
+                                                                    <div class="checkbox">
+                                                                        <input type="checkbox" name="checkbox_example_1">
+                                                                        <label></label>
+                                                                    </div>
+                                                                </td>
+                                                                <td>
+                                                                    <a href="#">WPX-2060</a>
+                                                                </td>
+                                                                <td>25/11/2018</td>
+                                                                <td>
+                                                                    17.50 EUR
+                                                                </td>
+                                                                <td>
+                                                                    <a href="#">11500-x</a>
+                                                                </td>
+                                                                <td>
+                                                                    <span class="badge badge--2 mr-4">
+                                                                        <i class="bg-orange"></i> pending
+                                                                    </span>
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+
