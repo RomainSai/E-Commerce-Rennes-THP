@@ -9,7 +9,7 @@ class CartsController < ApplicationController
 
     def new
       puts "------dans new de Carts----"
-      #@current_cart = 
+      #@current_cart =
     end
 
     def create
@@ -18,17 +18,21 @@ class CartsController < ApplicationController
       p '-' * 20 + 'cart created' + '-' * 20
     end
 
-    def cart_exists? 
+    def cart_exists?
       puts "------dans cart_exists?----"
-      @cart = Cart.create(user_id: current_user.id)
+      if Cart.find_by(user_id: current_user.id).user_id == current_user.id
+        @cart = Cart.find_by(user_id: current_user.id)
+      else
+        @cart = Cart.create(user_id: current_user.id)
+      end
     end
 
     def show
-     puts "------dans show de Carts----" 
+     puts "------dans show de Carts----"
      cart_exists?
+     @cart_total = 
     end
 
-    private 
-    
-    
+    private
+
 end
