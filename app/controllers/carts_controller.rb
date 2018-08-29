@@ -1,5 +1,7 @@
 class CartsController < ApplicationController
     attr_accessor :cart
+    before_action :authenticate_user!
+
     #around_action :cart_exists?, only: [:new]
 
     def index
