@@ -41,7 +41,7 @@
 
                   <li class="nav-item dropdown megamenu">
                         <% if user_signed_in? %>
-                          <%= link_to (image_tag 'icons/panier_blanc.png'), new_user_registration_path, :class => 'nav-link' %>
+                          <%= link_to (image_tag 'icons/panier_blanc.png'), cart_path(current_user.id), :class => 'nav-link' %>
                         <% end %>
                   <li class="nav-item dropdown megamenu">
                         <% if user_signed_in? %>
