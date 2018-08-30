@@ -14,16 +14,12 @@ local:
  # region: eu-west-3
  # bucket: projet.thp.boutique.en.ligne
 
-amazon_<%= Rails.env %>:
+amazon_development:
   service: S3
-  access_key_id:
-    <%= Rails.application.credentials.dig(
-      Rails.env.to_sym, :aws, :access_key_id) %>
-  secret_access_key:
-    <%= Rails.application.credentials.dig(
-      Rails.env.to_sym, :aws, :secret_access_key) %>
+  access_key_id: AKIAIQVPAE3TN57D6PBQ
+  secret_access_key: 3fjECiBWVEDpCdfdoll1OaWJD/GM89wrbJpqb7nX
   region: eu-west-3
-  bucket: thp-<%= Rails.env %>
+  bucket: thp-development
 
 # Remember not to checkin your GCS keyfile to a repository
 # google:
