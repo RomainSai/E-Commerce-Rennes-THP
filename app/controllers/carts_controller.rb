@@ -1,6 +1,6 @@
 class CartsController < ApplicationController
     attr_accessor :cart
-    #around_action :cart_exists?, only: [:new]
+    before_action :authenticate_user!
 
     def index
     puts "------dans index de Carts----"
@@ -28,21 +28,16 @@ class CartsController < ApplicationController
     end
 
     def show
-     puts "------dans show de Carts----"
-     cart_exists?
-     p '-' * 20 + @cart.id.to_s + '-' * 20
-     p '-' * 20 + @cart.user_id.to_s + '-' * 20
-     p '-' * 20 + 'inserting items' + '-' * 20
-     insert_items
-     p '-' * 20 + @cart.items.last.to_s + '-' * 20
-     p '-' * 20 + @cart.items.last.price.to_s + '-' * 20
-     p '-' * 20 + 'items inserted' + '-' * 20
-     @cart_total = 0
-     @cart.items.each do |item|
-       p '-' * 20 + item.price.to_s + '-' * 20
-       @cart_total += item.price.to_f
-       p '-' * 20 + '€' + @cart_total.to_s + '-' * 20
-     end
+      if user_signed_in?
+        cart_exists?
+        insert_items
+        @cart_total = 0
+        @cart.items.each do |item|
+          @cart_total += item.price.to_f
+        end
+      else
+        redirect_to new_user_session_path
+      end
     end
 
     def insert_items

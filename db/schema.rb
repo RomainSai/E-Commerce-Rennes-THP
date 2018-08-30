@@ -64,8 +64,6 @@ ActiveRecord::Schema.define(version: 2018_08_29_162735) do
   end
 
   create_table "orders", force: :cascade do |t|
-    t.string "state"
-    t.string "item_sku"
     t.integer "total_cents", default: 0, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
