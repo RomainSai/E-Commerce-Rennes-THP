@@ -34,6 +34,11 @@
 	width: 120px;
 }
 
+
+.btn-panier{
+	margin-bottom: 30px;
+}
+
 .text-banner{
   position: absolute !important;
 
@@ -74,3 +79,4 @@
   left: 50%;
   transform: translate(-50%, -50%);
 }
+
