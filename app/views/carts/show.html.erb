@@ -1,34 +1,55 @@
-<h3>Votre Panier</h3>
-<% @cart.items.each do |item| %>
-  <div class="col-lg-5">
-      <!-- Product gallery -->
-      <div class="gallery-container">
-          <div id="slideshow" class="gallery-top no-padding bg-transparent"></div>
-          <div id="slideshow_thumbs" class="swiper-js-container gallery-thumbs gallery-thumbs--style-1 mt-4">
-              <div class="swiper-container" data-swiper-items="5" data-swiper-space-between="10" data-swiper-xs-items="3" data-swiper-xs-space-between="10" data-swiper-sm-items="4" data-swiper-sm-space-between="10">
-                  <div class="swiper-wrapper">
-                      <div class="block-image">
-                          <%= link_to image_tag item.image_url, :class =>"img-fluid" %>
-                      </div>
+<div class="col-lg-8">
+                                        <div class="main-content">
+                                            <!-- Page title -->
+                                            <div class="page-title">
+                                              <h3>Votre Panier</h3>
+                                                <div class="row align-items-center">
+                                                    <div class="col-lg-6 col-12">
+                                                        
+                                                    </div>
+                                                    <div class="col-lg-6 col-12">
 
-                  </div>
-              </div>
-          </div>
-      </div>
-  </div>
-  <div class="col-lg-7">
-    <div class="px-4">
-      <div class="product-description-wrapper">
-        <h2 class="product-title heading heading-3 strong-400 text-capitalize">
-            <%= item.title %>
-        </h2>
-        <div class="product-price py-3"><strong><%= item.price %></strong> €</div>
-      </div>
-    </div>
-  </div>
 
-  <div class="btn-panier">
+                                                    </div>
+                                                </div>
+                                            </div>
 
-    <%= link_to("Confirmer le panier", { controller: "orders", action: "show" } ) %>
-  </div>
-<% end %>
+                                            <!-- Order history table -->
+                                            <% @cart.items.each do |item| %>
+                                            <div class="card no-border">
+                                                <div>
+                                                    <table class="table table-sm table-hover">
+                                                        <thead>
+                                                            <tr>
+                                                                <th></th>
+                                                                <th>Name</th>
+                                                                <th>Amount</th>
+                                                            </tr>
+                                                        </thead>
+
+                                                        <tbody>
+                                                            <tr>
+                                                                <td>
+                                                                    <div class="block-image-2">
+                                                                        <%= link_to image_tag item.image_url, :class =>"img-fluid"%>
+                                                                    </div>
+                                                                </td>
+                                                                <td><%= item.title %></td>
+                                                                <td>
+                                                                   <%= item.price %>
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                            
+
+                                        </div>
+
+                                     </div>
+                                  <div class="btn-panier">
+
+                                    <%= link_to("Confirmer le panier", { controller: "orders", action: "show" } ) %>
+                                  </div>
+                                <% end %>
