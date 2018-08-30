@@ -1,4 +1,8 @@
 Bonjour, <%= @user.name %>
-Nous avons bien recu votre commande, merci.
+Nous avons bien recu votre commande N°<%= @order.id %>.
 Voici le détail: 
+<% @order.items.each do |item| %>
+  <%= item.title %>
+  <% end %>
+Rendez vous dans votre profile pour téléchargez vos images
 A bientôt,

@@ -3,24 +3,21 @@ class OrderMailer < ApplicationMailer
 require 'dotenv'
 Dotenv.load
 
-  def new_order
-    puts params.inspect
+  def new_order(user, order)
     @user = user
     @order = order
+    puts params.inspect
+
     p '-' * 20 + 'new_order mailer' + '-' * 20
-    puts @user
-    puts @order
-    mail(to: user, subject: "Détail de votre commande")
+    mail(to: @user.email, subject: "Détail de votre commande #{@order.id}")
   end
 
-  def new_order_admin
+  def new_order_admin(order)
     puts params.inspect
+    admin = "thprennes@gmail.com"
     p '-' * 20 + 'new_order_admin mailer' + '-' * 20
-    @admin = User.find_by(admin: true)
-    @order = Order.params[:id]
-    puts @user
-    puts @order
-    mail(to: @admin.email, subject: "Nouvelle commande numéro #{@order.id} de #{@order.total}")
+    @order = order
+    mail(to: admin, subject: "Félicitations, nouvelle commande numéro #{@order.id}")
 
   end
   
