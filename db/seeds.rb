@@ -201,3 +201,4 @@ Item.create(
 	filename: "image20.jpg")
 
 User.create(name: "admin", email: "thprennes@gmail.com", admin: true, password: "thprennes2018")
+
