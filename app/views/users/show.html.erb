@@ -47,7 +47,7 @@
 
                                                 <%= link_to "Données", user_path(current_user.id) %>
                                                 <%= link_to "Modifier vos données", edit_user_registration_path(current_user.id) %>
-                                                <%= link_to "Commandes", user_path(current_user.id) %>
+                                                <%= link_to "Commandes", users_order_path(current_user.id) %>
                                             </div>
 
                                             <!-- Account settings -->
@@ -68,7 +68,7 @@
                                                                 <div class="row align-items-center">
                                                                     <div class="col-md-6 col-lg-4">
                                                                         <div class="form-group">
-                                                                            <label class="control-label">Nom</label>
+                                                                            
                                                                             <input type="email" class="form-control form-control-lg" value= <%= @user.name %> disabled>
                                                                         </div>
                                                                     </div>
@@ -89,7 +89,7 @@
                                                                 <div class="row align-items-center">
                                                                     <div class="col-md-6 col-lg-4">
                                                                         <div class="form-group">
-                                                                            <label class="control-label">Email</label>
+                                                                            
                                                                             <input type="email" class="form-control form-control-lg" value= <%= @user.email %> disabled>
                                                                         </div>
                                                                     </div>
