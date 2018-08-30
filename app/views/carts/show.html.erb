@@ -9,6 +9,7 @@
                                                     </div>
                                                     <div class="col-lg-6 col-12">
 
+
                                                     </div>
                                                 </div>
                                             </div>
@@ -46,5 +47,9 @@
 
                                         </div>
 
-                                    </div>
-                                    <% end %>
+                                     </div>
+                                  <div class="btn-panier">
+
+                                    <%= link_to("Confirmer le panier", { controller: "orders", action: "show" } ) %>
+                                  </div>
+                                <% end %>
