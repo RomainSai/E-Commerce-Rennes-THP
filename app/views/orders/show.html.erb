@@ -1,55 +1,57 @@
-<div class="commande"><h1>Détail de votre commande numéro <%= @order.id %></h1></div>
-<!---->
-<div class="container">
-<% @order.items.each do |item| %>
-  <div class="col-lg-5">
-      <!-- Product gallery -->
-      <div class="gallery-container">
-          <div id="slideshow" class="gallery-top no-padding bg-transparent"></div>
-          <div id="slideshow_thumbs" class="swiper-js-container gallery-thumbs gallery-thumbs--style-1 mt-4">
-              <div class="swiper-container" data-swiper-items="5" data-swiper-space-between="10" data-swiper-xs-items="3" data-swiper-xs-space-between="10" data-swiper-sm-items="4" data-swiper-sm-space-between="10">
-                  <div class="swiper-wrapper">
-                      <div class="block-image">
-                          <%= link_to image_tag item.image_url, :class =>"img-fluid" %>
-                      </div>
-                  </div>
-              </div>
-          </div>
-      </div>
-  </div>
-  <div class="col-lg-7">
-    <div class="px-4">
-      <div class="product-description-wrapper">
-        <h2 class="product-title heading heading-3 strong-400 text-capitalize">
-            <%= item.title %>
-        </h2>
 
+<div class="container">
+  <div class="commande"><h1>Détail de votre commande numéro <%= @order.id %></h1></div>
+  <!---->
+  <% @order.items.each do |item| %>
+    <div class="col-lg-5">
+        <!-- Product gallery -->
+        <div class="gallery-container">
+            <div id="slideshow" class="gallery-top no-padding bg-transparent"></div>
+            <div id="slideshow_thumbs" class="swiper-js-container gallery-thumbs gallery-thumbs--style-1 mt-4">
+                <div class="swiper-container" data-swiper-items="5" data-swiper-space-between="10" data-swiper-xs-items="3" data-swiper-xs-space-between="10" data-swiper-sm-items="4" data-swiper-sm-space-between="10">
+                    <div class="swiper-wrapper">
+                        <div class="block-image">
+                            <%= link_to image_tag item.image_url, :class =>"img-fluid" %>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-7">
+      <div class="px-4">
+        <div class="product-description-wrapper">
+          <h2 class="product-title heading heading-3 strong-400 text-capitalize">
+              <%= item.title %>
+          </h2>
+
+        </div>
       </div>
     </div>
-  </div>
-  <div class="product-price py-3">
-    <h2>Total de votre commande: <%= ((@order.total_cents.to_f)/100) %>€</h2>
-  <% end %>
-  </div>
- </div> 
-  <!---->
-<div class="container">
-  <!------------ STRIPE   -------------------->
-  <%= form_tag charges_path do %>
-  <article>
-    <% if flash[:error].present? %>
-      <div id="error_explanation">
-        <p><%= flash[:error] %></p>
-      </div>
-  <% end %>
-  </article>
+    <% end %>
+    <div class="product-price py-3">
+      <h2>Total de votre commande: <%= ((@order.total_cents.to_f)/100) %>€</h2>
+    </div>
 
-  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-          data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-          data-description="Paiement de votre commande"
-          data-amount="<%= @order.total_cents %>"
-          data-currency="eur"
-          data-locale="auto">
-  </script>
-  <% end %>
+  <!---->
+  <div class="container">
+    <!------------ STRIPE   -------------------->
+    <%= form_tag charges_path do %>
+    <article>
+      <% if flash[:error].present? %>
+        <div id="error_explanation">
+          <p><%= flash[:error] %></p>
+        </div>
+    <% end %>
+    </article>
+
+    <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+            data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+            data-description="Paiement de votre commande"
+            data-amount="<%= @order.total_cents %>"
+            data-currency="eur"
+            data-locale="auto">
+    </script>
+    <% end %>
+  </div>
 </div>
