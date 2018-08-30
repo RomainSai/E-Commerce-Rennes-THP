@@ -61,7 +61,7 @@
                                                         </thead>
 
                                                         <tbody>
-                                                                <% Order.all.each do |order|%>
+                                                                <% Order.where(user_id: current_user.id).each do |order|%>
                                                             <tr>
                                                                 <td>
                                                                     <%= order.id %>

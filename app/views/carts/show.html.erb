@@ -40,9 +40,12 @@
                 </div>
             </div>
             <% end %>
+            <div class="btn-panier">
+                <%= link_to("Confirmer le panier", { controller: "orders", action: "show" }, :class =>"btn btn-styled btn-base-1") %>
+                <%= link_to "Continuer ses achats", root_path, :class =>"btn btn-styled btn-base-1" %>
+            </div>
+
         </div>
     </div>
-    <div class="btn-panier">
-        <%= link_to("Confirmer le panier", { controller: "orders", action: "show" } ) %>
-    </div>
+    
 </div>  
