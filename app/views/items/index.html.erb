@@ -1,41 +1,33 @@
 <main class="body-wrap">
     <!--    BANNER        -->
-    <section class="parallax-section parallax-section-lg border-bottom">
-      <%= link_to (image_tag("")),  :style => "background-image:"%>
 
-      <div class="container">
-        <div class="row">
-          <div class="col-12">
-            <div class="row py-5">
-              <div class="col-lg-6 col-md-8">
-                <h1 class="heading heading-1 strong-400 text-normal">
-                  Shop
-                </h1>
+    <div class="container-banner">
 
-                <span class="clearfix"></span>
-                  <div class="lead mt-3 mb-3">
-                    Acheter des oeuvres, contribuer au travail d'un artiste
-                  </div>
+      <%= image_tag 'banner-img1.jpg', :class => 'banner-img'%>
 
-                <span class="short-delimiter--style-1 mb-4"></span>
-                <div class="btn-container">
-                  <a href="#product-list" class="btn btn-styled btn-base-1">Shop now !</a>
-                </div>
-              </div>
-            </div>
+      <div class="centered">
+        <p class="notice"><%= notice %></p>
+        <p class="alert"><%= alert %></p>
+        <h1>
+          BIENVENUE SUR PICTUR'ART
+        </h1>
+
+          <div class="lead mt-3 mb-3">
+            Acheter des oeuvres, contribuer au travail d'un artiste
           </div>
+
+        <div class="btn-container">
+          <a href="#product-list" class="btn btn-styled btn-base-1">Liste des produits !</a>
         </div>
       </div>
-    </section>
-
-
+    </div>
     <!--    Images        -->
     <div class="container" id="product-list">
       <div class="row align-items-center mb-4">
         <div class="col-md-6">
           <div class="text-center text-md-left">
-            <h3 class="heading heading-4 strong-600 text-capitalize">
-              Product list
+            <h3 class="heading heading-8 strong-600 text-capitalize">
+              Liste des produits
             </h3>
           </div>
         </div>
@@ -56,7 +48,7 @@
                   </h3>
                   <div class="price-wrapper mt-2">
                     <span class="price heading-6 c-gray-dark strong-500">
-                    <span class="price-value"><%= item.price %> €
+                    <span class="price-value"><%= humanized_money_with_symbol(item.price_cents) %>
                     </span>
                     </span>
                   </div>
