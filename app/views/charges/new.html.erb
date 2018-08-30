@@ -13,8 +13,8 @@
 
   <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
           data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-          data-description="Image <%= @order.item_sku %>"
-          data-amount="<%= @order.amount_cents %>"
+          data-description="Paiement de votre commande"
+          data-amount="<%= @order %>"
           data-currency="<%= @order.amount.currency %>"
           data-locale="auto"></script>
 <% end %>

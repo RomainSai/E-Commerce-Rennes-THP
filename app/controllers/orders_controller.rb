@@ -10,14 +10,13 @@ class OrdersController < ApplicationController
     end
 
     @order.items.each do |item|
-      @order.total_cents += item.price
+      @order.total_cents += item.price_cents
     end
 
   end
 
   def show
-    
-
+    create
   end
 
 end
