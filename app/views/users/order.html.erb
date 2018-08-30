@@ -4,15 +4,14 @@
                                 <div class="row cols-xs-space cols-sm-space cols-md-space">
                                     <div class="col-lg-4">
                                         <div class="sidebar sidebar--style-2 no-border">
-                                                <div class="widget">
+                                            <div class="widget">
         <!-- Profile picture -->
         <div class="profile-picture profile-picture--style-2">
-            <%= image_tag 'profile/person-3.jpg', :class=> "img-center"%>
+            <%= image_tag 'https://s3.eu-west-3.amazonaws.com/projet.thp.boutique.en.ligne/profile/default-avatar.jpg', :class=> "img-center"%>
             <a href="#" class="btn-aux">
                 <i class="ion ion-edit"></i>
             </a>
         </div>
-
         <!-- Profile details -->
         <div class="profile-details">
             <h2 class="heading heading-4 strong-500 profile-name"><%= @user.name %></h2>
@@ -32,7 +31,7 @@
                                                     <div class="col-lg-6 col-12">
                                                         <h2 class="heading heading-5 text-capitalize strong-500 mb-0">
                                                             <a href="#" class="link text-underline--none">
-                                                                <i class="ion-ios-arrow-back"></i> Orders
+                                                                <i class="ion-ios-arrow-back"></i> Commandes passées
                                                             </a>
                                                         </h2>
                                                     </div>
@@ -42,10 +41,11 @@
                                                 </div>
                                             </div>
 
-                                             <div class="link-menu link-menu--style-3 py-4 border-bottom">
+                                            <div class="link-menu link-menu--style-3 py-4 border-bottom">
 
-                                                <%= link_to "Settings", user_path(current_user.id) %>
-                                                <%= link_to "Order", user_path(current_user.id) %>
+                                                <%= link_to "Données", user_path(current_user.id) %>
+                                                <%= link_to "Modifier vos données", edit_user_registration_path(current_user.id) %>
+                                                <%= link_to "Commandes", users_order_path(current_user.id) %>
                                             </div>
 
                                             <!-- Order history table -->
@@ -54,108 +54,30 @@
                                                     <table class="table table-sm table-hover">
                                                         <thead>
                                                             <tr>
-                                                                <th>Order</th>
+                                                                <th>ID de commande</th>
                                                                 <th>Date</th>
-                                                                <th>Amount</th>
+                                                                <th>Montant</th>
                                                             </tr>
                                                         </thead>
 
                                                         <tbody>
+                                                                <% Order.all.each do |order|%>
                                                             <tr>
                                                                 <td>
-                                                                    <a href="#">WPX-1500</a>
+                                                                    <%= order.id %>
                                                                 </td>
-                                                                <td>06/08/2018</td>
                                                                 <td>
-                                                                    25.00 EUR
+                                                                    <%= order.created_at %>
+                                                                </td>
+                                                                <td>
+                                                                    <%= order.total_cents %>
                                                                 </td>
                                                             </tr>
-                                                            <tr>
-                                                                <td>
-                                                                    <a href="#">WPX-1602</a>
-                                                                </td>
-                                                                <td>10/10/2018</td>
-                                                                <td>
-                                                                    60.20 EUR
-                                                                </td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>
-                                                                    <a href="#"><a href="#">WPX-1650</a></a>
-                                                                </td>
-                                                                <td>15/10/2018</td>
-                                                                <td>
-                                                                    99.00 EUR
-                                                                </td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>
-                                                                    <a href="#">WPX-1741</a>
-                                                                </td>
-                                                                <td>23/08/2018</td>
-                                                                <td>
-                                                                    35.00 EUR
-                                                                </td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>
-                                                                    <a href="#">WPX-2060</a>
-                                                                </td>
-                                                                <td>25/11/2018</td>
-                                                                <td>
-                                                                    17.50 EUR
-                                                                </td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>
-                                                                    <a href="#">WPX-1500</a>
-                                                                </td>
-                                                                <td>06/08/2018</td>
-                                                                <td>
-                                                                    25.00 EUR
-                                                                </td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>
-                                                                    <a href="#">WPX-1602</a>
-                                                                </td>
-                                                                <td>10/10/2018</td>
-                                                                <td>
-                                                                    60.20 EUR
-                                                                </td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>
-                                                                    <a href="#"><a href="#">WPX-1650</a></a>
-                                                                </td>
-                                                                <td>15/10/2018</td>
-                                                                <td>
-                                                                    99.00 EUR
-                                                                </td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>
-                                                                    <a href="#">WPX-1741</a>
-                                                                </td>
-                                                                <td>23/08/2018</td>
-                                                                <td>
-                                                                    35.00 EUR
-                                                                </td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>
-                                                                    <a href="#">WPX-2060</a>
-                                                                </td>
-                                                                <td>25/11/2018</td>
-                                                                <td>
-                                                                    17.50 EUR
-                                                                </td>
-                                                            </tr>
+                                                            <% end -%>
                                                         </tbody>
                                                     </table>
                                                 </div>
                                             </div>
-
                                         </div>
                                     </div>
                                 </div>

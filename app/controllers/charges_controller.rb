@@ -1,15 +1,22 @@
 class ChargesController < ApplicationController
   require 'dotenv'
+  require "stripe"
   Dotenv.load
 
-  require "stripe"
-Stripe.api_key = "sk_test_hbNUl1AqNieYvIz49KzF257h"
+  attr_accessor :user, :order
+
+
+  def initialize
+    @user = current_user
+    @order = ''
+    puts @user
+  end
+
 
 Stripe::Customer.create(
-  :description => "Customer for jenny.rosen@example.com",
+  :description => "Customer for XXXXXX",
   :source => "tok_mastercard" # obtained with Stripe.js
 )
-
 
   def new
   end
@@ -22,11 +29,13 @@ Stripe::Customer.create(
     puts '------------CREATE STRIPE----------'
     charge = Stripe::Charge.create(
       :customer    => customer.id,
-      :amount      => 200,
+      :amount      => 222,
       :description => "Paiement pour l'image",
       :currency    => "eur"
     )
-    puts '------------CREATE lolololo----------'
+    puts '------------FIN CREATE STRIPE----------'
+
+   # OrderMailer.new_order.deliver_now
 
   rescue Stripe::CardError => e
     flash[:error] = 'problème de carte'

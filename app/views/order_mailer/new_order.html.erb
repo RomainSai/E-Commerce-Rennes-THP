@@ -1,0 +1,13 @@
+<meta charset="UTF-8">
+<p>Bonjour, <%= @user.name %></p>
+<p>Nous avons bien recu votre commande <%= @order.id %>.</p>
+<p>Voici le détail: </p>
+<ul>
+  <%= @order.items.each do |item| %>
+<li>Article: <%= item.title %></li>
+<li>Tarif: <%= humanized_money_with_symbol(item.price_cents) %></li>
+<ul>
+<% end %>
+
+<p>Rendez vous dans votre profile pour téléchargez vos images</p>
+<p>A bientôt,</p>

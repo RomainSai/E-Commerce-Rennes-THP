@@ -33,7 +33,7 @@
                                                         <h2 class="heading heading-5 text-capitalize strong-500 mb-0">
                                                             <a href="#" class="link text-underline--none">
                                                                 
-                                                                <i class="ion-ios-arrow-back"></i> Settings
+                                                                <i class="ion-ios-arrow-back"></i> Données utilisateur
                                                             </a>
                                                         </h2>
                                                     </div>
@@ -45,8 +45,9 @@
 
                                             <div class="link-menu link-menu--style-3 py-4 border-bottom">
 
-                                                <%= link_to "Settings", user_path(current_user.id) %>
+                                                <%= link_to "Données", user_path(current_user.id) %>
                                                 <%= link_to "Modifier vos données", edit_user_registration_path(current_user.id) %>
+                                                <%= link_to "Commandes", users_order_path(current_user.id) %>
                                             </div>
 
                                             <!-- Account settings -->
@@ -57,18 +58,18 @@
                                                         <div class="card no-border bg-transparent">
                                                             <div class="card-title px-0 pb-0 no-border">
                                                                 <h3 class="heading heading-6 strong-600">
-                                                                    Informations générales
+                                                                    Nom
                                                                 </h3>
                                                                 <p class="mt-1 mb-0">
-                                                                   Aidez nous à améliorer notre expérience utilisateur en remplissant les champs nécéssaires.
+                                                                   
                                                                 </p>
                                                             </div>
                                                             <div class="card-body px-0">
-                                                                <div class="row">
+                                                                <div class="row align-items-center">
                                                                     <div class="col-md-6 col-lg-4">
                                                                         <div class="form-group">
-                                                                            <label class="control-label">Name</label>
-                                                                            <input type="text" class="form-control form-control-lg" value= <%= @user.name %>>
+                                                                            
+                                                                            <input type="email" class="form-control form-control-lg" value= <%= @user.name %> disabled>
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -81,79 +82,22 @@
                                                         <div class="card no-border bg-transparent">
                                                             <div class="card-title px-0 pb-0 no-border">
                                                                 <h3 class="heading heading-6 strong-600">
-                                                                    Informations sur le compte
+                                                                    Email
                                                                 </h3>
-                                                                <p class="mt-1 mb-0">
-                                                                    Modifiez votre e-mail.
-                                                                </p>
                                                             </div>
                                                             <div class="card-body px-0">
                                                                 <div class="row align-items-center">
                                                                     <div class="col-md-6 col-lg-4">
                                                                         <div class="form-group">
-                                                                            <label class="control-label">Email</label>
+                                                                            
                                                                             <input type="email" class="form-control form-control-lg" value= <%= @user.email %> disabled>
                                                                         </div>
                                                                     </div>
-                                                                   <div class="col-md-6 col-lg-4">
-                                                                        <div class="form-group">
-                                                                            <label class="control-label">Confirmez l'email</label>
-                                                                            <input type="text" class="form-control form-control-lg">
-                                                                        </div>
-                                                                    </div>
-
-                                                                    <div class="col-md-6 col-lg-4">
-                                                                        <div class="form-group">
-                                                                            <label class="control-label">Confirmez l'email</label>
-                                                                            <input type="text" class="form-control form-control-lg">
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-
-                                                                <div class="text-right">
-                                                                    <a href="#" class="btn btn-base-1">Valider</a>
-
                                                                 </div>
                                                             </div>
                                                         </div>
 
-                                                        <hr class="mt-0 mb-0">
-
-                                                        <!-- Change password -->
-                                                        <div class="card no-border bg-transparent">
-                                                            <div class="card-title px-0 pb-0 no-border">
-                                                                <h3 class="heading heading-6 strong-600">
-                                                                    Modifiez votre mot de passe
-                                                                </h3>
-                                                            </div>
-                                                            <div class="card-body px-0">
-                                                                <div class="row">
-                                                                    <div class="col-md-6 col-lg-4">
-                                                                        <div class="form-group">
-                                                                            <label class="control-label">Mot de passe actuel</label>
-                                                                            <input type="text" class="form-control form-control-lg">
-                                                                        </div>
-                                                                    </div>
-
-                                                                    <div class="col-md-6 col-lg-4">
-                                                                        <div class="form-group">
-                                                                            <label class="control-label">Nouveau mot de passe</label>
-                                                                            <input type="text" class="form-control form-control-lg">
-                                                                        </div>
-                                                                    </div>
-
-                                                                    <div class="col-md-6 col-lg-4">
-                                                                        <div class="form-group">
-                                                                            <label class="control-label">Confirmez votre mot de passe</label>
-
-                                                                            <input type="text" class="form-control form-control-lg">
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-
-                                                                <div class="text-right">
-                                                                    <a href="#" class="btn btn-base-1">Valider</a>
-                                                                </div>
+                                                        
                                                             </div>
                                                         </div>
                                                     </form>
