@@ -1,5 +1,6 @@
+
 <div class="container">
-  <h1>Détail de votre commande numéro <%= @order.id %></h1>
+  <div class="commande"><h1>Détail de votre commande numéro <%= @order.id %></h1></div>
   <!---->
   <% @order.items.each do |item| %>
     <div class="col-lg-5">

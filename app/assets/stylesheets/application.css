@@ -46,7 +46,7 @@
 
 .container-banner {
     position: relative;
-    text-align: center;
+    text-align: left;
     color: white;
     border-bottom: 1px solid rgba(192,199,210,1);
     padding-bottom: 10px;
@@ -63,9 +63,9 @@
 .centered {
     position: absolute;
     top: 100%;
-    left: 50%;
+    left: 30%;
     transform: translate(-50%, -50%);
-    background:rgba(255,255,255,0.4);
+    background:transparent;
     padding: 15px;
 }
 
@@ -78,5 +78,9 @@
   top: -20%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+
+.commande{
+	margin-left: 9%;
 }
 
