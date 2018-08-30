@@ -27,8 +27,8 @@ $ rails server
 
 <h2>TEAM RENNAISE EN FORCE !!</h2>
 
-On à donné beaucoup d'amour pour cette application, so, enjoy it !<br>
-<strong>Ses créateurs :</strong><br>
+On à donné beaucoup d'amour pour cette application, so, enjoy it !<br><br>
+<strong>Ses créateurs :</strong><br><br>
 Romain Saillour : https://github.com/RomainSai <br>
 Leona Chevrel : https://github.com/RainbowQuartz <br>
 Christophe Leray : https://github.com/christopheleray <br>
