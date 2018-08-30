@@ -25,7 +25,7 @@
         <h2 class="product-title heading heading-3 strong-400 text-capitalize">
             <%= item.title %>
         </h2>
-        <div class="product-price py-3"><strong><%= @order.total_cents %></strong> €</div>
+        <div class="product-price py-3"><strong><%= humanized_money_with_symbol(@order.total_cents) %></strong></div>
       </div>
     </div>
   </div>
