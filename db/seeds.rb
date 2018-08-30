@@ -200,4 +200,5 @@ Item.create(
 	io: File.open("#{Rails.root}/app/assets/images/image20.jpg"),
 	filename: "image20.jpg")
 
+User.create(name: "admin", email: "thprennes@gmail.com", admin: true, password: "thprennes2018")
 
