@@ -43,11 +43,11 @@
                                                 </div>
                                             </div>
 
-                                            <div class="link-menu link-menu--style-3 py-4 border-bottom">
+                                           <div class="link-menu link-menu--style-3 py-4 border-bottom">
 
                                                 <%= link_to "Données", user_path(current_user.id) %>
                                                 <%= link_to "Modifier vos données", edit_user_registration_path(current_user.id) %>
-                                                <%= link_to "Commandes", user_path(current_user.id) %>
+                                                <%= link_to "Commandes", users_order_path(current_user.id) %>
                                             </div>
 
                                                       <h2>Modifier <%= resource_name.to_s.humanize %></h2>
