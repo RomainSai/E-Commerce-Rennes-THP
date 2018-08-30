@@ -6,7 +6,6 @@ class OrdersController < ApplicationController
 
     @cart.items.each do |item|
       @order.items << item
-      item.destroy
     end
 
     @order.items.each do |item|

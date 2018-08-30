@@ -3,15 +3,6 @@ class ChargesController < ApplicationController
   require "stripe"
   Dotenv.load
 
-  attr_accessor :user, :order
-
-
-  def initialize
-    @user = current_user
-    @order = ''
-    puts @user
-  end
-
 
 Stripe::Customer.create(
   :description => "Customer for XXXXXX",
@@ -22,6 +13,11 @@ Stripe::Customer.create(
   end
 
   def create
+    user = current_user
+    order = Order.where(user_id: user.id)
+    order = order[-1]
+
+    puts "-----------------------#{order.id}------------------------"
     customer = Stripe::Customer.create(
       :email => params[:stripeEmail],
       :source  => params[:stripeToken]
@@ -35,7 +31,8 @@ Stripe::Customer.create(
     )
     puts '------------FIN CREATE STRIPE----------'
 
-   # OrderMailer.new_order.deliver_now
+    OrderMailer.new_order(user, order).deliver_now
+    OrderMailer.new_order_admin(order).deliver_now
 
   rescue Stripe::CardError => e
     flash[:error] = 'problème de carte'
