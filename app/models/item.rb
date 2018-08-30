@@ -4,8 +4,9 @@ class Item < ApplicationRecord
 	validates :short_description, presence: true
 	validates :long_description, presence: true
 	validates :title, presence: true
-	validates :image_url, presence: true
+	#validates :image_url, presence: true
 	validates :price, presence: true
-
+  validates :sku, uniqueness: true  
+	has_one_attached :image_url
 	monetize :price_cents
 end

@@ -1,11 +1,14 @@
 Rails.application.routes.draw do
 
   get 'users/show'
+  get 'users/order'
   get 'session/login'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   resources :charges
 
+
   resources :devise
+
 
   resources :users
   root to: 'items#index'
