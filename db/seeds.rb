@@ -199,5 +199,3 @@ Item.create(
 	).image_url.attach(
 	io: File.open("#{Rails.root}/app/assets/images/image20.jpg"),
 	filename: "image20.jpg")
-
-
