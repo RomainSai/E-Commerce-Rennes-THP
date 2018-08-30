@@ -1,24 +1,38 @@
-# README
+# Pictur'art
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+https://e-commerce-rennes.herokuapp.com/ 
+(voici un lien heroku qui ne veux pas fonctionner, ne clique pas dessus, ça ne sers rien)
 
-Things you may want to cover:
+<h2>Notre site</h2>
+A Rennes, on kiffe les artistes, on les kiffe tellement, qu'on veux les aider à vivre !
+<strong>Comment ?</strong>
+En proposant un site sur lequel on peux acheter des oeuvres d'art, que vous recevrez directement par mail.
+Ici, on met l'artiste en avant, car, acheter une oeuvre d'art c'est contribuer à la survie d'un artiste.
 
-* Ruby version
+<h2>Commandes</h2>
+Comme notre site ne fonctionne pas en production, je t'invite à effectuer les commandes suivantes :
 
-* System dependencies
+<pre>
+<code>
+$ git clone https://github.com/RomainSai/E-Commerce-Rennes-THP.git
+$ bunble install
+$ rails db:create
+$ rails db:migrate
+$ rails db:seed
+$ rails server
+</code>
+</pre>
 
-* Configuration
+/!\ ATTENTION /!\ Ceci est une application en postgresql, je te conseille de l'installer avant de lancer l'application :)
 
-* Database creation
+<h2>TEAM RENNAISE EN FORCE !!</h2>
 
-* Database initialization
+On à donné beaucoup d'amour pour cette application, so, enjoy it !
+<strong>Ses créateurs :</strong>
+Romain Saillour : https://github.com/RomainSai 
+Leona Chevrel : https://github.com/RainbowQuartz
+Christophe Leray : https://github.com/christopheleray
+Rémi Samson : https://github.com/breizzh
+Sandrine Le Breton : https://github.com/Ertemelle
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* test roro
+LE BISOUUUU <3<3<3<3
