@@ -35,13 +35,13 @@
                   </li>
                   <li class="nav-item dropdown megamenu">
                         <% if user_signed_in? %>
-                          <%= link_to (image_tag 'icons/profil_blanc.png'), user_path(current_user.id), :class => 'nav-link' %>
+                          <%= link_to (image_tag 'https://s3.eu-west-3.amazonaws.com/projet.thp.boutique.en.ligne/icons/profil_blanc.png'), user_path(current_user.id), :class => 'nav-link' %>
                         <% end -%>
                   </li>
 
                   <li class="nav-item dropdown megamenu">
                         <% if user_signed_in? %>
-                          <%= link_to (image_tag 'icons/panier_blanc.png'), user_path(current_user.id),  :class => 'nav-link' %>
+                          <%= link_to (image_tag 'https://s3.eu-west-3.amazonaws.com/projet.thp.boutique.en.ligne/icons/panier_blanc.png'), cart_path(current_user.id), :class => 'nav-link' %>
                         <% end %>
                   <li class="nav-item dropdown megamenu">
                         <% if user_signed_in? %>
