@@ -1,55 +1,48 @@
-<div class="col-lg-8">
-                                        <div class="main-content">
-                                            <!-- Page title -->
-                                            <div class="page-title">
-                                              <h3>Votre Panier</h3>
-                                                <div class="row align-items-center">
-                                                    <div class="col-lg-6 col-12">
-                                                        
-                                                    </div>
-                                                    <div class="col-lg-6 col-12">
+<div class="container">  
+    <div class="col-lg-8">
+        <div class="main-content">
+        <!-- Page title -->
+            <div class="page-title">
+                <h3>Votre Panier: </h3>
+                    <div class="row align-items-center">
+                        <div class="col-lg-6 col-12">                                   
+                        </div>
+                        <div class="col-lg-6 col-12">
+                        </div>
+                    </div>
+            </div>
 
+        <!-- Order history table -->
+        <% @cart.items.each do |item| %>
+            <div class="card no-border">
+                <div>
+                    <table class="table table-sm table-hover">
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th>Name</th>
+                                <th>Amount</th>
+                            </tr>
+                        </thead>
 
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <!-- Order history table -->
-                                            <% @cart.items.each do |item| %>
-                                            <div class="card no-border">
-                                                <div>
-                                                    <table class="table table-sm table-hover">
-                                                        <thead>
-                                                            <tr>
-                                                                <th></th>
-                                                                <th>Name</th>
-                                                                <th>Amount</th>
-                                                            </tr>
-                                                        </thead>
-
-                                                        <tbody>
-                                                            <tr>
-                                                                <td>
-                                                                    <div class="block-image-2">
-                                                                        <%= link_to image_tag item.image_url, :class =>"img-fluid"%>
-                                                                    </div>
-                                                                </td>
-                                                                <td><%= item.title %></td>
-                                                                <td>
-                                                                   <%= item.price %>
-                                                                </td>
-                                                            </tr>
-                                                        </tbody>
-                                                    </table>
-                                                </div>
-                                            </div>
-                                            
-
-                                        </div>
-
-                                     </div>
-                                  <div class="btn-panier">
-
-                                    <%= link_to("Confirmer le panier", { controller: "orders", action: "show" } ) %>
-                                  </div>
-                                <% end %>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <div class="block-image-2">
+                                        <%= link_to image_tag item.image_url, :class =>"img-fluid"%>
+                                    </div>
+                                </td>
+                                <td><%= item.title %></td>
+                                <td><%= item.price %>€</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <% end %>
+        </div>
+    </div>
+    <div class="btn-panier">
+        <%= link_to("Confirmer le panier", { controller: "orders", action: "show" } ) %>
+    </div>
+</div>  
