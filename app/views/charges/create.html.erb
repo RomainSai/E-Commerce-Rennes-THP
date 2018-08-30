@@ -1,2 +1,6 @@
-<h2>Merci, votre paiement de <strong>$5.00</strong> a bien été prit en compte!</h2>
-<a>Vous revevrez votre achat dans quelques instants</a>
+<h2>Merci, votre paiement de <strong><%= @order %></strong> a bien été pris en compte!</h2>
+<a>Vous revevrez votre achat dans quelques instants par email</a>
+
+<div class="btn-container">
+  <a><%= link_to "Revenir sur le site", root_path, :class => 'btn btn-styled btn-base-1' %></a>
+</div>
