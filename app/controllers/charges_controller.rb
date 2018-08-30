@@ -9,7 +9,7 @@ Stripe::Customer.create(
   :description => "Customer for jenny.rosen@example.com",
   :source => "tok_mastercard" # obtained with Stripe.js
 )
-  @amount = @cart_total.to_i
+
 
   def new
   end
@@ -22,9 +22,9 @@ Stripe::Customer.create(
     puts '------------CREATE STRIPE----------'
     charge = Stripe::Charge.create(
       :customer    => customer.id,
-      :amount      => @amount,
+      :amount      => 200,
       :description => "Paiement pour l'image",
-      :currency    => 'usd'
+      :currency    => "eur"
     )
     puts '------------CREATE lolololo----------'
 
