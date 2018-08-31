@@ -10,8 +10,8 @@ gem 'bootstrap', '~> 4.1.3'
 gem 'jquery-rails'
 
 # ActiveStorage
+gem 'aws-sdk-s3'
 gem 'mini_magick'
-gem "aws-sdk-s3", require: false
 
 gem 'stripe'
 
